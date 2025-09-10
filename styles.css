@@ -1,0 +1,400 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    padding: 0 2rem;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.nav-logo h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #1a1a1a;
+    letter-spacing: -0.02em;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #666;
+    font-weight: 400;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    letter-spacing: -0.01em;
+}
+
+.nav-menu li a:hover {
+    color: #1a1a1a;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    font-weight: 900;
+    line-height: 1.1;
+    color: #1a1a1a;
+    margin-bottom: 2rem;
+    letter-spacing: -0.03em;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 4rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* Hero Visual */
+.hero-visual {
+    position: relative;
+    margin: 4rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.green-background {
+    position: absolute;
+    width: 900px;
+    height: 700px;
+    background: linear-gradient(135deg, #6b8e23, #8fbc8f);
+    border-radius: 20px;
+    opacity: 0.15;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: float 6s ease-in-out infinite;
+    display: block;
+    margin: auto;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(-50%, -50%) translateY(0px) scale(1); }
+    50% { transform: translate(-50%, -50%) translateY(-20px) scale(1.05); }
+}
+
+.tablet-mockup {
+    position: relative;
+    z-index: 2;
+    width: 400px;
+    height: 280px;
+    background: #1a1a1a;
+    border-radius: 25px;
+    padding: 25px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+    transform: perspective(1000px) rotateY(-3deg) rotateX(3deg);
+    transition: transform 0.3s ease;
+}
+
+.tablet-mockup:hover {
+    transform: perspective(1000px) rotateY(-2deg) rotateX(2deg);
+}
+
+.tablet-screen {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #87CEEB 0%, #98FB98 100%);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.tablet-screen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><defs><linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:%2387CEEB;stop-opacity:1" /><stop offset="100%" style="stop-color:%23E0F6FF;stop-opacity:1" /></linearGradient><linearGradient id="hills" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:%2398FB98;stop-opacity:1" /><stop offset="100%" style="stop-color:%236B8E23;stop-opacity:1" /></linearGradient></defs><rect width="400" height="200" fill="url(%23sky)"/><path d="M0,200 Q100,150 200,180 T400,160 L400,300 L0,300 Z" fill="url(%23hills)"/></svg>') no-repeat center center;
+    background-size: cover;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.tablet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.breadcrumb {
+    font-size: 0.8rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.region-selector {
+    font-size: 0.8rem;
+    color: #666;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.efficiency-display {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.efficiency-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1;
+}
+
+.efficiency-label {
+    font-size: 0.9rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.chart-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.chart-bars {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    height: 100px;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.bar {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 6px 6px 0 0;
+    min-height: 20px;
+    transition: all 0.3s ease;
+    animation: growUp 1.5s ease-out forwards;
+    opacity: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bar:nth-child(1) { animation-delay: 0.1s; }
+.bar:nth-child(2) { animation-delay: 0.2s; }
+.bar:nth-child(3) { animation-delay: 0.3s; }
+.bar:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes growUp {
+    from {
+        height: 0;
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.chart-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+.chart-labels span {
+    font-size: 0.8rem;
+    color: #333;
+    font-weight: 600;
+}
+
+/* CTA Button */
+.cta-button {
+    background: #6b8e23;
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: -0.01em;
+    margin-top: 2rem;
+    box-shadow: 0 4px 15px rgba(107, 142, 35, 0.3);
+    position: relative;
+    z-index: 10;
+}
+
+.cta-button .arrow {
+    margin-left: 8px;
+    font-size: 1.1em;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover .arrow {
+    transform: translateX(3px);
+}
+
+.cta-button:hover {
+    background: #5a7a1f;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(107, 142, 35, 0.4);
+}
+
+.cta-button:active {
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
+    
+    .nav-menu {
+        gap: 1.5rem;
+    }
+    
+    .nav-menu li a {
+        font-size: 0.9rem;
+    }
+    
+    .hero-section {
+        padding: 0 1rem;
+        padding-top: 100px;
+    }
+    
+    .hero-title {
+        font-size: clamp(2.5rem, 10vw, 4rem);
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 3rem;
+    }
+    
+    .tablet-mockup {
+        width: 320px;
+        height: 240px;
+        transform: none;
+    }
+    
+    .green-background {
+        width: 700px;
+        height: 500px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        margin: auto;
+    }
+    
+    .nav-menu {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .tablet-mockup {
+        width: 250px;
+        height: 190px;
+        padding: 15px;
+    }
+    
+    .tablet-screen {
+        padding: 15px;
+    }
+    
+    .chart-header h3 {
+        font-size: 0.8rem;
+    }
+    
+    .improvement-badge {
+        font-size: 0.7rem;
+        padding: 3px 6px;
+    }
+    
+    .cta-button {
+        padding: 14px 28px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus states for accessibility */
+.cta-button:focus,
+.nav-menu li a:focus {
+    outline: 2px solid #6b8e23;
+    outline-offset: 2px;
+}
